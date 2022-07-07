@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'monument_extendedregular';
+    src: url('PPMonumentExtended-Regular.woff2') format('woff2'),
+         url('PPMonumentExtended-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'monument_extendedultrabold';
+    src: url('PPMonumentExtended-Bold.woff2') format('woff2'),
+         url('PPMonumentExtended-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'monument_extendedthin';
+    src: url('PPMonumentExtended-Thin.woff2') format('woff2'),
+         url('PPMonumentExtended-Thin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
