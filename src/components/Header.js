@@ -9,7 +9,7 @@ const Header = () => {
   const width = window.innerWidth; // window size: ;
 
   useEffect(() => {
-    if (width < 767) {
+    if (width < 1024) {
       setIsMobile(true);
     }
   }, [width]);
@@ -40,9 +40,9 @@ const Header = () => {
                       <path
                         d="M1 11H16M1 1H16H1ZM1 6H16H1Z"
                         stroke="black"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   </li>
@@ -68,12 +68,12 @@ const Header = () => {
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
                           d="M2 2.52837L7.2381 6.7856L7.49987 7L7.7619 6.7856L13 2.52837L12.4762 2L7.49987 6.04283L2.52381 2L2 2.52837Z"
                           fill="#0500FF"
                           stroke="#0500FF"
-                          stroke-width="2"
+                          strokeWidth="2"
                         />
                       </svg>
                     </a>
@@ -110,8 +110,8 @@ const Header = () => {
                 <path
                   d="M13 13L1 1M13 1L1 13"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
               </svg>
             </div>
@@ -126,7 +126,6 @@ const Header = () => {
             <li>
               <a href="#abc">
                 Services
-                <input />
                 <svg
                   style={{ float: "right" }}
                   width="15"
@@ -136,12 +135,12 @@ const Header = () => {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M2 2.52837L7.2381 6.7856L7.49987 7L7.7619 6.7856L13 2.52837L12.4762 2L7.49987 6.04283L2.52381 2L2 2.52837Z"
                     fill="#0500FF"
                     stroke="#0500FF"
-                    stroke-width="2"
+                    strokeWidth="2"
                   />
                 </svg>
                 <ul className="innerItems">

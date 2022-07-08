@@ -113,7 +113,21 @@
   border-radius: 50%;
   transform: matrix(0.99, -0.12, 0.12, 0.99, 0, 0);
 }
-@media screen and (max-width: 767px) {
+@media only screen and (max-width: 1270px) and (min-width: 768px) {
+  .footer .container .footer_row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4rem;
+  }
+  .footer .container .footer_row .footer_col_3 {
+    display: block;
+    width: 100%;
+  }
+  .footer .container .footer_row {
+    padding: 0%;
+  }
+}
+@media screen and (max-width: 768px) {
   .footer .container .footer_row {
     flex-direction: column;
   }
