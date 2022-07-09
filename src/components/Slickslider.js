@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 import Slider from "react-slick";
-import img1 from "../images/footer_be.png";
-import img2 from "../images/footer_dribble.png";
-import img3 from "../images/footer_facebook.png";
-import img4 from "../images/footer_google.png";
-import img5 from "../images/footer_linekdin.png";
-import img6 from "../images/footer_insta.png";
+//import img1 from "../images/footer_be.png";
+//import img2 from "../images/footer_dribble.png";
+//import img3 from "../images/footer_facebook.png";
+//import img4 from "../images/footer_google.png";
+//import img5 from "../images/footer_linekdin.png";
+//import img6 from "../images/footer_insta.png";
 const ImageSliderAsNav = () => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);

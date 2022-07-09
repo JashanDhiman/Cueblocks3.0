@@ -48,6 +48,30 @@
   font-size: 1.37rem;
   font-weight: 600;
 }
+.hero_section .scrollDownIcon {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
+  position: absolute;
+  top: 90%;
+  left: 5%;
+}
+.hero_section .scrollDownIcon svg {
+  position: absolute;
+}
+.rotate {
+  animation: loading 10s linear infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .heroBlurBlu {
   position: absolute;
   background-color: var(--color-blue2);
@@ -158,6 +182,9 @@
 @media screen and (max-width: 768px) {
   .hero_section_bottom {
     padding-bottom: 4.0625rem;
+  }
+  .hero_section .scrollDownIcon {
+    display: none;
   }
   .hero_section .heroBlurBlu {
     left: -2rem;
