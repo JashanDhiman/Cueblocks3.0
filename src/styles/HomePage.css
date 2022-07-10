@@ -133,7 +133,13 @@
 .serviceSection .container .service {
   display: flex;
   gap: 14rem;
-  flex-wrap: wrap-reverse;
+  position: relative;
+  position: relative;
+  height: 100%;
+}
+.serviceSection .container .service .service_col1 #imgDiv {
+  position: sticky;
+  top: 0;
 }
 .serviceSection .container .service .service_col2 h3 {
   padding-top: 2.375rem;
@@ -156,9 +162,6 @@
 .service_col2 .services_marketing,
 .service_col2 .services_design {
   padding-top: 3.125rem;
-}
-.service_col2 .services_development li:nth-child(3) a {
-  color: var(--color-primary);
 }
 .services_design {
   padding-bottom: 4.625rem;

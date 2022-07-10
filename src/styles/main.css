@@ -24,13 +24,14 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  position: initial;
 }
 
 html,
 body {
   font-family: var(--font-monExtR);
   font-size: 1rem;
-  overflow-x: hidden;
+  width: 100%;
 }
 
 a {
