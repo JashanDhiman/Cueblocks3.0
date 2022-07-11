@@ -33,7 +33,9 @@ body {
   font-size: 1rem;
   width: 100%;
 }
-
+html {
+  font-size: 62.5%;
+}
 a {
   text-decoration: none;
   color: var(--color-black);
@@ -63,4 +65,9 @@ p {
   max-width: 1270px;
   padding: 0 15px;
   margin: auto;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

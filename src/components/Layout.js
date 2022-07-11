@@ -7,7 +7,13 @@ const Layout = ({ showHeader, showFooter, children }) => {
   return (
     <>
       {showHeader && <Header />}
-      <div style={{ maxWidth: showHeader ? "1280px" : "100%", margin: "auto" }}>
+      <div
+        style={{
+          maxWidth: showHeader ? "1280px" : "100%",
+          margin: "auto",
+          paddingTop: "23.6rem",
+        }}
+      >
         {children}
       </div>
       {showFooter && <Footer />}

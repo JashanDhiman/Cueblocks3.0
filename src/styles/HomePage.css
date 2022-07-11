@@ -7,7 +7,7 @@
   justify-content: center;
 }
 .hero_section_text {
-  max-width: 60rem;
+  max-width: 60.6rem;
   font-family: var(--font-monExtT);
   font-weight: 600;
   display: flex;
@@ -15,24 +15,24 @@
   align-items: stretch;
   align-content: flex-end;
   margin: auto;
-  padding-left: 3rem;
+  padding-left: 3.6rem;
 }
 .hero_section_text h1 {
-  line-height: clamp(1.5rem, 3.5vw, 3.43rem);
-  font-size: clamp(1.25rem, 3.5vw, 2.75rem);
+  line-height: clamp(2.1rem, 3.5vw, 4.03rem);
+  font-size: clamp(1.85rem, 3.5vw, 3.35rem);
 }
 .hero_section_text strong {
   font-family: var(--font-monExtR);
 }
 .hero_section_text span:nth-child(3) {
-  padding-left: 13rem;
+  padding-left: 13.6rem;
 }
 .hero_section_text p {
   text-align: center;
-  padding: 0.7rem 0 0 4rem;
+  padding: 1.3rem 0 0 4.6rem;
 }
 .hero_section_bottom {
-  padding-top: 1.25rem;
+  padding-top: 1.85rem;
 }
 .ecommerce_button {
   display: flex;
@@ -40,13 +40,15 @@
 }
 .ecommerce_button span:first-child {
   font-family: var(--font-monExtT);
-  font-size: 1.12rem;
+  font-size: 1.72rem;
   font-weight: 600;
 }
 .ecommerce_button span:last-child {
   font-family: var(--font-monExtB);
-  font-size: 1.37rem;
+  font-size: 1.97rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 .hero_section .scrollDownIcon {
   display: flex;
@@ -76,30 +78,30 @@
   position: absolute;
   background-color: var(--color-blue2);
   border-radius: 100%;
-  filter: blur(7rem);
-  height: 10rem;
-  left: 18rem;
-  top: 6rem;
+  filter: blur(7.6rem);
+  height: 10.6rem;
+  left: 18.6rem;
+  top: 6.6rem;
   transform: translateY(50%);
-  width: 7.9rem;
+  width: 8.5rem;
   z-index: -19;
 }
 .heroBlurYel {
   position: absolute;
   background-color: var(--color-yell);
   border-radius: 100%;
-  filter: blur(9rem);
-  height: 10rem;
+  filter: blur(9.6rem);
+  height: 10.6rem;
   right: 0rem;
-  bottom: -8rem;
+  bottom: -8.6rem;
   transform: translateY(50%);
-  width: 15.9rem;
+  width: 16.5rem;
   z-index: -19;
 }
 /* ---- hero section ends ---- */
 /* ---- video section starts ---- */
 .videoSection {
-  padding-top: 7.56rem;
+  padding-top: 8.16rem;
   width: 100%;
 }
 .videoSection .container {
@@ -114,54 +116,62 @@
 }
 #play_btn {
   position: absolute;
-  font-size: 4.6rem;
-  top: 2.56rem;
-  left: 3.12rem;
-  color: var(--color-blue3);
+  top: 3.16rem;
+  left: 3.72rem;
+  border-radius: 50%;
+  border: 1px solid #000;
+  width: 74px;
+  height: 74px;
+  background: #cac6e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#play_btn svg {
+  width: 30px;
+  height: 30px;
 }
 /* ---- video section ends ---- */
 /* ---- service section starts ---- */
 .serviceSection {
-  padding-top: 8.12rem;
+  padding-top: 8.72rem;
   position: relative;
 }
 .serviceSection .heroBlurBlu {
   position: absolute;
-  top: 45rem;
-  left: -0.7rem;
+  top: 51rem;
+  left: -1.3rem;
 }
 .serviceSection .container .service {
   display: flex;
-  gap: 14rem;
-  position: relative;
-  position: relative;
-  height: 100%;
+  gap: 20rem;
+  flex-wrap: wrap-reverse;
 }
-.serviceSection .container .service .service_col1 #imgDiv {
+.serviceSection .container .service #imgDiv {
   position: sticky;
   top: 0;
 }
 .serviceSection .container .service .service_col2 h3 {
-  padding-top: 2.375rem;
+  padding-top: 2.975rem;
 }
 .service_col2 h4 {
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.85rem;
 }
 .service_col2 li {
-  line-height: 2.68rem;
+  line-height: 3.28rem;
 }
 .service_col2 li a:hover {
   color: var(--color-primary);
 }
 .service_col2 span {
-  font-size: 0.875rem;
+  font-size: 1.475rem;
 }
 .service_col2 .services_development {
-  padding-top: 3.75rem;
+  padding-top: 4.35rem;
 }
 .service_col2 .services_marketing,
 .service_col2 .services_design {
-  padding-top: 3.125rem;
+  padding-top: 3.725rem;
 }
 .services_design {
   padding-bottom: 4.625rem;
@@ -171,18 +181,88 @@
   justify-content: flex-end;
 }
 .getInTouch a span:first-child {
-  font-size: 1.5rem;
+  font-size: 2.1rem;
   font-weight: 600;
   font-family: var(--font-monExtT);
 }
 .getInTouch a span:last-child {
-  font-size: 1.75rem;
+  font-size: 2.35rem;
   font-weight: 700;
-  padding-left: 1.4rem;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
 }
 /* ---- service section ends ---- */
+/* ---- clients section start ---- */
+.clientsSection {
+  margin: 20rem 0;
+  position: relative;
+}
+.clientsSection .sliderDiv {
+  overflow: hidden;
+}
+.clientsSection .clientsWord {
+  display: flex !important;
+  gap: 7rem;
+  margin: 0 0 10rem 0;
+}
+.clientsSection .quotesIcon {
+  position: absolute;
+  top: -5%;
+  left: -6%;
+}
+.clientsSection .clientsWord .col {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.clientsSection .clientsWord .col1 {
+  width: calc(80% - 3.5rem);
+}
+/*.clientsSection .clientsWord .col2 {
+  width: calc(20% - 3.5rem);
+}*/
+.clientsSection .clientsWord .col1 .title,
+.clientsSection .clientsWord .col1 .clientName {
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+}
+.clientsSection .clientsWord .col1 .text {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+}
+.clientsSection .clientsWord .col2 b {
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
+}
+.clientsSection .clientsWord .col2 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin-top: 1rem;
+}
+.clientsSection .clientsWord .col2 ul li {
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  line-height: 3rem;
+  border: 1.45985px solid #000000;
+  border-radius: 13.1387px;
+  padding: 0 1rem;
+  white-space: nowrap;
+  text-align: center;
+}
+.clientsSection .slick-dots {
+  position: initial !important;
+}
+.clientsSection .slick-initialized .slick-slide {
+  display: flex !important;
+  align-content: center !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 70px !important;
+}
+/* ---- clients section ends ---- */
 
 @media screen and (max-width: 768px) {
+  .hero_section {
+    overflow-x: clip;
+  }
   .hero_section_bottom {
     padding-bottom: 4.0625rem;
   }
@@ -205,7 +285,14 @@
     padding-left: 0;
     gap: 0.5rem;
   }
-
+  #play_btn {
+    width: 46px;
+    height: 46px;
+  }
+  #play_btn svg {
+    width: 16px;
+    height: 16px;
+  }
   .hero_section_text span:nth-child(3) {
     padding-left: 4.5rem;
   }
@@ -227,7 +314,6 @@
     padding-top: 0;
   }
   .video_play_btn #play_btn {
-    font-size: 3.5rem;
     top: 1rem;
     left: 2rem;
   }
@@ -265,5 +351,19 @@
   }
   .serviceSection .heroBlurBlu {
     top: 11rem;
+  }
+  .clientsSection .clientsWord {
+    flex-direction: column;
+    padding: 1rem 3.8rem;
+  }
+  .clientsSection .clientsWord .col1 {
+    width: 100%;
+  }
+  .clientsSection .quotesIcon {
+    top: -6%;
+    left: 5%;
+  }
+  .clientsSection .quotesIcon svg {
+    width: 90px;
   }
 }

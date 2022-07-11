@@ -4,7 +4,7 @@ import serviceImg from "../images/service_img.png";
 import arrow from "../images/Arrow 2.png";
 import videoPoster from "../images/videoSectionImg.png";
 import "../styles/HomePage.css";
-import ImageSliderAsNav from "../components/Slickslider";
+import ImageSliderAsNav from "../components/ImageSliderAsNav";
 
 // styles
 
@@ -60,7 +60,6 @@ const IndexPage = () => {
   return (
     <>
       <Layout showHeader={true} showFooter={true}>
-        {/*<ImageSliderAsNav />*/}
         <section className="hero_section">
           <div className="container">
             <div className="hero_sec_flex">
@@ -209,14 +208,28 @@ const IndexPage = () => {
               <div className="video_play_btn">
                 <a href="#abc">
                   <span className="material-symbols-outlined" id="play_btn">
-                    play_circle
+                    <svg
+                      width="28"
+                      height="32"
+                      viewBox="0 0 28 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M27 16L1 1M1 1V31V1ZM27 16L1 31L27 16Z"
+                        stroke="black"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </span>
                 </a>
               </div>
             </div>
           </div>
         </section>
-        <div className="serviceSection">
+        <section className="serviceSection">
           <div className="container">
             <div className="service">
               <div className="service_col1">
@@ -302,7 +315,8 @@ const IndexPage = () => {
             </div>
           </div>
           <div className="heroBlurBlu"></div>
-        </div>
+        </section>
+        <ImageSliderAsNav />
       </Layout>
     </>
   );
