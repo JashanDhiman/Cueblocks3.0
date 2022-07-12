@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { AiOutlineUp } from "react-icons/ai";
+
 import img1 from "../images/ATG_icon.png";
 import img2 from "../images/FB_icon.png";
 import img3 from "../images/Amazon_icon.png";
@@ -13,10 +15,16 @@ const ImageSliderAsNav = () => {
 
   var settings = {
     dots: true,
-    infinite: true,
+    //infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 2,
+    focusOnSelect: true,
+    centerMode: true,
+    //touchMove: true,
+    afterChange: () => {
+      console.log("hello");
+    },
     responsive: [
       {
         breakpoint: 768,
@@ -26,6 +34,11 @@ const ImageSliderAsNav = () => {
         },
       },
     ],
+  };
+  const arrowStyle = {
+    fontSize: "2rem",
+    color: "#0500ff",
+    opacity: "0",
   };
   return (
     <section className="clientsSection">
@@ -323,23 +336,46 @@ const ImageSliderAsNav = () => {
             </div>
           </div>
         </Slider>
-        <Slider {...settings} asNavFor={nav1} ref={(slider) => setNav2(slider)}>
+        <Slider
+          {...settings}
+          className={"slider2"}
+          asNavFor={nav1}
+          ref={(slider) => setNav2(slider)}
+        >
           <div>
+            <i className="icons" style={arrowStyle}>
+              <AiOutlineUp />
+            </i>
             <img src={img1} alt="icon" />
           </div>
           <div>
+            <i className="icons" style={arrowStyle}>
+              <AiOutlineUp />
+            </i>
             <img src={img2} alt="icon" />
           </div>
           <div>
+            <i className="icons" style={arrowStyle}>
+              <AiOutlineUp />
+            </i>
             <img src={img3} alt="icon" />
           </div>
           <div>
+            <i className="icons" style={arrowStyle}>
+              <AiOutlineUp />
+            </i>
             <img src={img4} alt="icon" />
           </div>
           <div>
+            <i className="icons" style={arrowStyle}>
+              <AiOutlineUp />
+            </i>
             <img src={img4} alt="icon" />
           </div>
           <div>
+            <i className="icons" style={arrowStyle}>
+              <AiOutlineUp />
+            </i>
             <img src={img4} alt="icon" />
           </div>
         </Slider>

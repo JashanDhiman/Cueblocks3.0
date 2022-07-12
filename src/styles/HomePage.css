@@ -7,7 +7,7 @@
   justify-content: center;
 }
 .hero_section_text {
-  max-width: 60.6rem;
+  max-width: 87.3rem;
   font-family: var(--font-monExtT);
   font-weight: 600;
   display: flex;
@@ -114,7 +114,7 @@
   max-width: -webkit-fill-available;
   height: auto;
 }
-#play_btn {
+.video_play_btn #play_btn {
   position: absolute;
   top: 3.16rem;
   left: 3.72rem;
@@ -127,7 +127,7 @@
   justify-content: center;
   align-items: center;
 }
-#play_btn svg {
+.video_play_btn #play_btn svg {
   width: 30px;
   height: 30px;
 }
@@ -144,12 +144,13 @@
 }
 .serviceSection .container .service {
   display: flex;
-  gap: 20rem;
+  /*gap: 20rem;*/
+  justify-content: space-around;
   flex-wrap: wrap-reverse;
 }
 .serviceSection .container .service #imgDiv {
   position: sticky;
-  top: 0;
+  top: 8.3rem;
 }
 .serviceSection .container .service .service_col2 h3 {
   padding-top: 2.975rem;
@@ -249,6 +250,7 @@
 }
 .clientsSection .slick-dots {
   position: initial !important;
+  margin-top: 5rem;
 }
 .clientsSection .slick-initialized .slick-slide {
   display: flex !important;
@@ -256,9 +258,49 @@
   justify-content: center !important;
   align-items: center !important;
   min-height: 70px !important;
+  cursor: pointer;
 }
 /* ---- clients section ends ---- */
-
+/* ---- portfolio grid starts----*/
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 4.375rem;
+  column-gap: 4.0625rem;
+}
+.titlePort h3 {
+  padding-bottom: 5rem;
+}
+.cardImage img {
+  width: 100%;
+  height: 100%;
+}
+.cardContent {
+  text-align: center;
+  padding-top: 3.125rem;
+}
+.cardContent div {
+  padding-top: 0.625rem;
+}
+.cardContent div span {
+  padding: 0 0.625rem 0 0.4375rem;
+}
+.cardContent div span:not(:last-child) {
+  border-right: 2px solid;
+}
+.portfolio .getInTouch {
+  padding-top: 6.25rem;
+}
+.slider2 .slick-slide {
+  opacity: 0.2 !important;
+}
+.slider2 .slick-current {
+  opacity: 1 !important;
+}
+.slider2 .slick-current .icons {
+  opacity: 1;
+}
+/* ---- portfolio grid ends----*/
 @media screen and (max-width: 768px) {
   .hero_section {
     overflow-x: clip;
@@ -285,14 +327,6 @@
     padding-left: 0;
     gap: 0.5rem;
   }
-  #play_btn {
-    width: 46px;
-    height: 46px;
-  }
-  #play_btn svg {
-    width: 16px;
-    height: 16px;
-  }
   .hero_section_text span:nth-child(3) {
     padding-left: 4.5rem;
   }
@@ -316,6 +350,12 @@
   .video_play_btn #play_btn {
     top: 1rem;
     left: 2rem;
+    width: 46px;
+    height: 46px;
+  }
+  .video_play_btn #play_btn svg {
+    width: 16px;
+    height: 16px;
   }
   .videoSection .container {
     padding: 0;
@@ -365,5 +405,16 @@
   }
   .clientsSection .quotesIcon svg {
     width: 90px;
+  }
+  /* portfolio section */
+  .portfolio .container {
+    padding: 0;
+  }
+  .portfolioGrid {
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .cardContent {
+    padding-top: 1.25rem;
   }
 }

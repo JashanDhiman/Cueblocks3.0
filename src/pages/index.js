@@ -5,6 +5,13 @@ import arrow from "../images/Arrow 2.png";
 import videoPoster from "../images/videoSectionImg.png";
 import "../styles/HomePage.css";
 import ImageSliderAsNav from "../components/ImageSliderAsNav";
+import img1 from "../images/portfolioImg_1.png";
+import img2 from "../images/portfolioImg_2.png";
+import img3 from "../images/portfolioImg_3.png";
+import img4 from "../images/portfolioImg_4.png";
+import img5 from "../images/portfolioImg_5.png";
+import img6 from "../images/portfolioImg_6.png";
+//import video from "../videos/home_video.mov";
 
 // styles
 
@@ -57,6 +64,27 @@ import ImageSliderAsNav from "../components/ImageSliderAsNav";
 
 // markup
 const IndexPage = () => {
+  const [playVideo, setPlayVideo] = React.useState(false);
+  const portfolioGrid = [
+    {
+      img: img1,
+      title: "Gunsberg",
+      content: ["Website", "Packaging", "SEO", "Content"],
+    },
+    {
+      img: img2,
+      title: "AllThatGrows",
+      content: ["Amazon Marketplace", "Building Brand Identity", "Packaging"],
+    },
+    { img: img3, title: "Womanswork", content: ["SEO"] },
+    {
+      img: img4,
+      title: "Perennial Cycle",
+      content: ["Google Shoping Engine", "SEO"],
+    },
+    { img: img5, title: "PetDoors", content: ["Speed Optimisation"] },
+    { img: img6, title: "BettyandBiddy", content: ["Google Shoping Engine"] },
+  ];
   return (
     <>
       <Layout showHeader={true} showFooter={true}>
@@ -201,11 +229,17 @@ const IndexPage = () => {
         <section className="videoSection">
           <div className="container">
             <div className="video_image">
-              <video width="1240" height="516" poster={videoPoster}>
-                <source src="" type="video/mp4" />
+              <video width="1240" height="516">
+                <source
+                  src="https://blimp.agency/desktop/assets/resources/img/home/header/home_video.mov"
+                  type="video/mov"
+                />
                 Your browser does not support the video tag.
               </video>
-              <div className="video_play_btn">
+              <div
+                className="video_play_btn"
+                onClick={() => setPlayVideo(!playVideo)}
+              >
                 <a href="#abc">
                   <span className="material-symbols-outlined" id="play_btn">
                     <svg
@@ -317,6 +351,53 @@ const IndexPage = () => {
           <div className="heroBlurBlu"></div>
         </section>
         <ImageSliderAsNav />
+        <section className="portfolio">
+          <div className="container">
+            <div className="titlePort">
+              <h3>Portfolio</h3>
+            </div>
+            <div className="portfolioGrid">
+              {portfolioGrid.map(({ img, title, content }, index) => {
+                return (
+                  <div className="portfolioCards" key={index}>
+                    <div className="cardImage">
+                      <img src={img} />
+                    </div>
+                    <div className="cardContent">
+                      <h4>{title}</h4>
+                      <div>
+                        {content.map((value, index) => {
+                          return <span key={index}>{value}</span>;
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="getInTouch">
+              <a href="#abc">
+                <span>Get in</span>
+                <br />
+                <span id="centerAlignArrow">
+                  Touch
+                  <svg
+                    width="49"
+                    height="8"
+                    viewBox="0 0 49 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M48.4317 4.35355C48.6269 4.15829 48.6269 3.84171 48.4317 3.64645L45.2497 0.464466C45.0544 0.269204 44.7379 0.269204 44.5426 0.464466C44.3473 0.659728 44.3473 0.976311 44.5426 1.17157L47.371 4L44.5426 6.82843C44.3473 7.02369 44.3473 7.34027 44.5426 7.53553C44.7379 7.7308 45.0544 7.7308 45.2497 7.53553L48.4317 4.35355ZM0.078125 4.5H48.0781V3.5H0.078125V4.5Z"
+                      fill="#0500FF"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
       </Layout>
     </>
   );

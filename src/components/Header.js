@@ -21,7 +21,6 @@ const Header = () => {
     <>
       <header className="header">
         <div className="container">
-          {/*border-bottom: 1px solid #333333;*/}
           <nav
             className="navigation"
             style={{
@@ -72,7 +71,7 @@ const Header = () => {
                     <a href="#abc">
                       Services{" "}
                       <i className="icons">
-                        {openService ? <AiOutlineDown /> : <AiOutlineUp />}
+                        {openService ? <AiOutlineUp /> : <AiOutlineDown />}
                       </i>
                     </a>
                   </li>
@@ -96,7 +95,7 @@ const Header = () => {
               <h3 onClick={() => setOpenDev(!openDev)}>
                 Development
                 <i className="icons">
-                  {openDev ? <AiOutlineDown /> : <AiOutlineUp />}
+                  {openDev ? <AiOutlineUp /> : <AiOutlineDown />}
                 </i>
               </h3>
               {openDev && (
@@ -112,7 +111,7 @@ const Header = () => {
               <h3 onClick={() => setOpenMarketing(!openMarketing)}>
                 Digital Marketing
                 <i className="icons">
-                  {openMarketing ? <AiOutlineDown /> : <AiOutlineUp />}
+                  {openMarketing ? <AiOutlineUp /> : <AiOutlineDown />}
                 </i>
               </h3>
               {openMarketing && (
