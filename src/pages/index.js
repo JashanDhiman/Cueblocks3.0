@@ -64,7 +64,8 @@ import img6 from "../images/portfolioImg_6.png";
 
 // markup
 const IndexPage = () => {
-  const [playVideo, setPlayVideo] = React.useState(false);
+  const vidRef = React.useRef(null);
+  const [playVideo, setPlayVideo] = React.useState(true);
   const portfolioGrid = [
     {
       img: img1,
@@ -85,6 +86,10 @@ const IndexPage = () => {
     { img: img5, title: "PetDoors", content: ["Speed Optimisation"] },
     { img: img6, title: "BettyandBiddy", content: ["Google Shoping Engine"] },
   ];
+  const handleVideo = (play) => {
+    play ? vidRef.current.play() : vidRef.current.pause();
+    setPlayVideo(!play);
+  };
   return (
     <>
       <Layout showHeader={true} showFooter={true}>
@@ -229,16 +234,18 @@ const IndexPage = () => {
         <section className="videoSection">
           <div className="container">
             <div className="video_image">
-              <video width="1240" height="516">
-                <source
-                  src="https://blimp.agency/desktop/assets/resources/img/home/header/home_video.mov"
-                  type="video/mov"
-                />
+              <video
+                width="1240"
+                height="516"
+                ref={vidRef}
+                poster={videoPoster}
+                src="https://blimp.agency/desktop/assets/resources/img/home/header/home_video.mov"
+              >
                 Your browser does not support the video tag.
               </video>
               <div
                 className="video_play_btn"
-                onClick={() => setPlayVideo(!playVideo)}
+                onClick={() => handleVideo(playVideo)}
               >
                 <a href="#abc">
                   <span className="material-symbols-outlined" id="play_btn">

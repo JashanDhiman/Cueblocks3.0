@@ -18,19 +18,18 @@ const ImageSliderAsNav = () => {
     //infinite: true,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 2,
+    //slidesToScroll: 2,
     focusOnSelect: true,
     centerMode: true,
     //touchMove: true,
-    afterChange: () => {
-      console.log("hello");
-    },
+    //afterChange: () => {
+    //  console.log("hello");
+    //},
     responsive: [
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
         },
       },
     ],
