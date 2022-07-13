@@ -1,6 +1,8 @@
 import * as React from "react";
 import Layout from "../components/Layout";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import serviceImg from "../images/service_img.png";
+import serviceImgWebP from "../images/service_img.webp";
 import arrow from "../images/Arrow 2.png";
 import videoPoster from "../images/videoSectionImg.png";
 import "../styles/HomePage.css";
@@ -11,7 +13,13 @@ import img3 from "../images/portfolioImg_3.png";
 import img4 from "../images/portfolioImg_4.png";
 import img5 from "../images/portfolioImg_5.png";
 import img6 from "../images/portfolioImg_6.png";
-//import video from "../videos/home_video.mov";
+import webImg1 from "../images/portfolioImg_1.webp";
+import webImg2 from "../images/portfolioImg_2.webp";
+import webImg3 from "../images/portfolioImg_3.webp";
+import webImg4 from "../images/portfolioImg_4.webp";
+import webImg5 from "../images/portfolioImg_5.webp";
+import webImg6 from "../images/portfolioImg_6.webp";
+import { StaticImage } from "gatsby-plugin-image";
 
 // styles
 
@@ -68,23 +76,41 @@ const IndexPage = () => {
   const [playVideo, setPlayVideo] = React.useState(true);
   const portfolioGrid = [
     {
-      img: img1,
+      img: "../images/portfolioImg_1.png",
+      webImg: webImg1,
       title: "Gunsberg",
       content: ["Website", "Packaging", "SEO", "Content"],
     },
     {
-      img: img2,
+      img: "../images/portfolioImg_2.png",
+      webImg: webImg2,
       title: "AllThatGrows",
       content: ["Amazon Marketplace", "Building Brand Identity", "Packaging"],
     },
-    { img: img3, title: "Womanswork", content: ["SEO"] },
     {
-      img: img4,
+      img: "../images/portfolioImg_3.png",
+      webImg: webImg3,
+      title: "Womanswork",
+      content: ["SEO"],
+    },
+    {
+      img: "../images/portfolioImg_4.png",
+      webImg: webImg4,
       title: "Perennial Cycle",
       content: ["Google Shoping Engine", "SEO"],
     },
-    { img: img5, title: "PetDoors", content: ["Speed Optimisation"] },
-    { img: img6, title: "BettyandBiddy", content: ["Google Shoping Engine"] },
+    {
+      img: "../images/portfolioImg_5.png",
+      webImg: webImg5,
+      title: "PetDoors",
+      content: ["Speed Optimisation"],
+    },
+    {
+      img: "../images/portfolioImg_6.png",
+      webImg: webImg6,
+      title: "BettyandBiddy",
+      content: ["Google Shoping Engine"],
+    },
   ];
   const handleVideo = (play) => {
     play ? vidRef.current.play() : vidRef.current.pause();
@@ -275,7 +301,18 @@ const IndexPage = () => {
             <div className="service">
               <div className="service_col1">
                 <div id="imgDiv">
-                  <img src={serviceImg} alt="serviceIMg" />
+                  {/*<picture>
+                    <source
+                      srcset={serviceImgWebP}
+                      type="image/webp"
+                      loading="lazy"
+                    />
+                    <img src={serviceImg} alt="serviceIMg" loading="lazy" />
+                  </picture>*/}
+                  <StaticImage
+                    src="../images/service_img.png"
+                    alt="A dinosaur"
+                  />
                 </div>
               </div>
               <div className="service_col2">
@@ -364,16 +401,28 @@ const IndexPage = () => {
               <h3>Portfolio</h3>
             </div>
             <div className="portfolioGrid">
-              {portfolioGrid.map(({ img, title, content }, index) => {
+              {portfolioGrid.map((node, index) => {
                 return (
                   <div className="portfolioCards" key={index}>
                     <div className="cardImage">
-                      <img src={img} />
+                      {/*<picture>
+                        <source
+                          srcset={webImg}
+                          type="image/webp"
+                          loading="lazy"
+                        />
+                        <img src={img} loading="lazy" />
+                      </picture>*/}
+                      {console.log(node.webImg)}
+                      <GatsbyImage
+                        image={getImage(node.webImg)}
+                        alt={node.title}
+                      />
                     </div>
                     <div className="cardContent">
-                      <h4>{title}</h4>
+                      <h4>{node.title}</h4>
                       <div>
-                        {content.map((value, index) => {
+                        {node.content.map((value, index) => {
                           return <span key={index}>{value}</span>;
                         })}
                       </div>

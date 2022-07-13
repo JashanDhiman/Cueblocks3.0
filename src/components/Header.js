@@ -10,13 +10,13 @@ const Header = () => {
   const [openService, setOpenService] = useState(false);
   const [openDev, setOpenDev] = useState(true);
   const [openMarketing, setOpenMarketing] = useState(true);
-  const width = window.innerWidth; // window size: ;
-
   useEffect(() => {
-    if (width < 1024) {
-      setIsMobile(true);
+    if (typeof window !== "undefined") {
+      if (window.innerWidth < 1024) {
+        setIsMobile(true);
+      }
     }
-  }, [width]);
+  }, []);
   return (
     <>
       <header className="header">
@@ -29,7 +29,7 @@ const Header = () => {
             }}
           >
             <div className="logo">
-              <a href="#">
+              <a href="#abc">
                 <h5>CueBlocks</h5>
               </a>
             </div>
@@ -39,7 +39,10 @@ const Header = () => {
                   <li>
                     <a href="#abc">Contact </a>
                   </li>
-                  <li onClick={() => setShowSideNav(true)}>
+                  <li
+                    onClick={() => setShowSideNav(true)}
+                    onKeyDown={() => setShowSideNav(true)}
+                  >
                     <svg
                       width="17"
                       height="12"
@@ -67,7 +70,10 @@ const Header = () => {
                   <li>
                     <a href="#abc">Careers </a>
                   </li>
-                  <li onClick={() => setOpenService(!openService)}>
+                  <li
+                    onClick={() => setOpenService(!openService)}
+                    onKeyDown={() => setOpenService(!openService)}
+                  >
                     <a href="#abc">
                       Services{" "}
                       <i className="icons">
@@ -92,7 +98,10 @@ const Header = () => {
         {openService && (
           <div className="serviceDropdown">
             <div className="innerDiv">
-              <h3 onClick={() => setOpenDev(!openDev)}>
+              <h3
+                onClick={() => setOpenDev(!openDev)}
+                onKeyDown={() => setOpenDev(!openDev)}
+              >
                 Development
                 <i className="icons">
                   {openDev ? <AiOutlineUp /> : <AiOutlineDown />}
@@ -108,7 +117,10 @@ const Header = () => {
               )}
             </div>
             <div className="innerDiv">
-              <h3 onClick={() => setOpenMarketing(!openMarketing)}>
+              <h3
+                onClick={() => setOpenMarketing(!openMarketing)}
+                onKeyDown={() => setOpenMarketing(!openMarketing)}
+              >
                 Digital Marketing
                 <i className="icons">
                   {openMarketing ? <AiOutlineUp /> : <AiOutlineDown />}
@@ -133,10 +145,13 @@ const Header = () => {
       {showSideNav && (
         <div className="sideNav">
           <div className="logo">
-            <a href="#">
+            <a href="#abc">
               <h5>CueBlocks</h5>
             </a>
-            <div onClick={() => setShowSideNav(false)}>
+            <div
+              onClick={() => setShowSideNav(false)}
+              onKeyDown={() => setShowSideNav(false)}
+            >
               <svg
                 width="14"
                 height="14"
