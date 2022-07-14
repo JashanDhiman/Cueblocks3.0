@@ -1,25 +1,11 @@
 import * as React from "react";
 import Layout from "../components/Layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import serviceImg from "../images/service_img.png";
-import serviceImgWebP from "../images/service_img.webp";
 import arrow from "../images/Arrow 2.png";
-import videoPoster from "../images/videoSectionImg.png";
 import "../styles/HomePage.css";
 import ImageSliderAsNav from "../components/ImageSliderAsNav";
-import img1 from "../images/portfolioImg_1.png";
-import img2 from "../images/portfolioImg_2.png";
-import img3 from "../images/portfolioImg_3.png";
-import img4 from "../images/portfolioImg_4.png";
-import img5 from "../images/portfolioImg_5.png";
-import img6 from "../images/portfolioImg_6.png";
-import webImg1 from "../images/portfolioImg_1.webp";
-import webImg2 from "../images/portfolioImg_2.webp";
-import webImg3 from "../images/portfolioImg_3.webp";
-import webImg4 from "../images/portfolioImg_4.webp";
-import webImg5 from "../images/portfolioImg_5.webp";
-import webImg6 from "../images/portfolioImg_6.webp";
 import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
 
 // styles
 
@@ -71,47 +57,38 @@ import { StaticImage } from "gatsby-plugin-image";
 //];
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   const vidRef = React.useRef(null);
   const [playVideo, setPlayVideo] = React.useState(true);
-  const portfolioGrid = [
+  const portfolioGridData = [
     {
-      img: "../images/portfolioImg_1.png",
-      webImg: webImg1,
       title: "Gunsberg",
       content: ["Website", "Packaging", "SEO", "Content"],
     },
     {
-      img: "../images/portfolioImg_2.png",
-      webImg: webImg2,
       title: "AllThatGrows",
       content: ["Amazon Marketplace", "Building Brand Identity", "Packaging"],
     },
     {
-      img: "../images/portfolioImg_3.png",
-      webImg: webImg3,
       title: "Womanswork",
       content: ["SEO"],
     },
     {
-      img: "../images/portfolioImg_4.png",
-      webImg: webImg4,
       title: "Perennial Cycle",
       content: ["Google Shoping Engine", "SEO"],
     },
     {
-      img: "../images/portfolioImg_5.png",
-      webImg: webImg5,
       title: "PetDoors",
       content: ["Speed Optimisation"],
     },
     {
-      img: "../images/portfolioImg_6.png",
-      webImg: webImg6,
       title: "BettyandBiddy",
       content: ["Google Shoping Engine"],
     },
   ];
+  const portfolioGridImg = data.allFile.edges;
+  console.log(portfolioGridImg);
+
   const handleVideo = (play) => {
     play ? vidRef.current.play() : vidRef.current.pause();
     setPlayVideo(!play);
@@ -264,7 +241,7 @@ const IndexPage = () => {
                 width="1240"
                 height="516"
                 ref={vidRef}
-                poster={videoPoster}
+                //poster={videoPoster}
                 src="https://blimp.agency/desktop/assets/resources/img/home/header/home_video.mov"
               >
                 Your browser does not support the video tag.
@@ -401,7 +378,8 @@ const IndexPage = () => {
               <h3>Portfolio</h3>
             </div>
             <div className="portfolioGrid">
-              {portfolioGrid.map((node, index) => {
+              {portfolioGridData.map(({ title, content }, index) => {
+                const imgSrc = portfolioGridImg[index].node;
                 return (
                   <div className="portfolioCards" key={index}>
                     <div className="cardImage">
@@ -413,16 +391,12 @@ const IndexPage = () => {
                         />
                         <img src={img} loading="lazy" />
                       </picture>*/}
-                      {console.log(node.webImg)}
-                      <GatsbyImage
-                        image={getImage(node.webImg)}
-                        alt={node.title}
-                      />
+                      <GatsbyImage image={getImage(imgSrc)} alt={title} />
                     </div>
                     <div className="cardContent">
-                      <h4>{node.title}</h4>
+                      <h4>{title}</h4>
                       <div>
-                        {node.content.map((value, index) => {
+                        {content.map((value, index) => {
                           return <span key={index}>{value}</span>;
                         })}
                       </div>
@@ -460,3 +434,18 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query {
+    allFile(filter: { relativeDirectory: { eq: "portfolioPng" } }) {
+      totalCount
+      edges {
+        node {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }
+`;
